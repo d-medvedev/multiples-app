@@ -8,16 +8,58 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var multiplesLogo: UIImageView!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var playButton: UIButton!
+    
+    @IBOutlet weak var addLabel: UILabel!
+    @IBOutlet weak var addButton: UIButton!
+    
+    var multiple = 0
+    var prevSum = 0
+    var currentSum = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.textField.delegate = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func onPlayButtonClick (sender: UIButton!){
+        
+        if textField.text != nil && textField.text != "" {
+            
+            multiplesLogo.hidden = true
+            textField.hidden = true
+            playButton.hidden = true
+            
+            addButton.hidden = false
+            addLabel.hidden = false
+            multiple = Int(textField.text!)!
+        }
+    }
+    
+    @IBAction func onAddButtonClick (sender: UIButton!){
+        
+        currentSum = prevSum + multiple
+        addLabel.text = "\(prevSum) + \(multiple) = \(currentSum)"
+        prevSum = currentSum
+        
+        if currentSum >= 30 {
+            textField.text = ""
+            multiplesLogo.hidden = false
+            textField.hidden = false
+            playButton.hidden = false
+            
+            addButton.hidden = true
+            addLabel.hidden = true
+        }
+    }
+    
+    func textFieldShouldReturn(userText: UITextField) -> Bool {
+        userText.resignFirstResponder()
+        return true;
     }
 
 
