@@ -57,9 +57,9 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What multiple to add by?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4BW-dY-297" userLabel="textfield">
-                                <rect key="frame" x="51" y="246" width="218" height="30"/>
+                                <rect key="frame" x="40" y="246" width="241" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="164" id="Phn-pF-gLh"/>
+                                    <constraint firstAttribute="width" constant="175" id="Phn-pF-gLh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>

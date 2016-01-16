@@ -48,12 +48,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         if currentSum >= 30 {
             textField.text = ""
+            addLabel.text = "Press Add to add!"
+            
             multiplesLogo.hidden = false
             textField.hidden = false
             playButton.hidden = false
             
             addButton.hidden = true
             addLabel.hidden = true
+            
+            multiple = 0
+            prevSum = 0
+            currentSum = 0
         }
     }
     
